@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>USBメモリを抜き差しせずに共有したい</title>
+
+    <style>
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 16px;
+        }
+
+        #wrap {
+            width: 1000px;
+            margin: 0px auto;
+        }
+
+        @media(max-width:1000px) {
+            #wrap {
+                width: 100%;
+            }
+        }
+
+        body {
+            background-color: #f5f6f7;
+        }
+
+        header,
+        main,
+        footer {
+            border: 1px solid #9AA5B1;
+        }
+
+        header {
+            background-image: url("images/header.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header h1 {
+            line-height: 180px;
+            font-size: 35px;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 1px gray;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        nav ul {
+            display: flex;
+            border: 1px solid #9AA5B1;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        nav ul li {
+            flex: 1;
+            text-align: center;
+        }
+
+        nav ul li:nth-of-type(2) {
+            border-left: 1px solid #9AA5B1;
+            border-right: 1px solid #9AA5B1;
+        }
+
+        nav ul li a {
+            display: block;
+            background-color: #344052;
+            line-height: 50px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        section {
+            margin: 5px;
+        }
+
+        section h2 {
+            font-size: 25px;
+            border-bottom: 2px solid #344052;
+            margin-bottom: 10px;
+        }
+
+        section h3 {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #344052;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f5f6f7;
+        }
+
+        footer {
+            border-top: none;
+            background-color: #344052;
+            text-align: center;
+            color: white;
+        }
+
+        #connection_usb{
+            display: block;
+            width: 55%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <header>
+            <h1>やりたいことから探せる、ガジェット活用術</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#purpose">やりたいことから探す</a></li>
+                <li><a href="index.html#gadgets">使用ガジェット</a></li>
+            </ul>
+        </nav>
+
+        <main>
+
+            <section>
+                <h2>USBメモリを抜き差しせずに共有したい</h2>
+                <p>
+                    PCにUSBメモリを差してデータを編集して、スマホで参照して…という作業をなくせます。<br>
+                    ハードディスクやSSDをつなげることもできる。という方法を紹介します。<br>
+                </p>
+            </section>
+
+
+            <section>
+                <h2>例えば…</h2>
+                <p>
+                    MT3600BEを使ってUSBメモリをネットワークストレージとして扱うことができます。<br>
+                    それによって、MT3600BEと接続しているPCもやスマホでUSBメモリのデータを参照、または編集できます。
+                </p>
+                <img id="connection_usb" src="images/connection_usb.jpg" alt="接続例">
+            </section>
+
+
+            <section>
+                <h2>何が便利なの？</h2>
+
+                <h3>USBを抜いたり差したりしなくてもいい</h3>
+                <p>
+                    USBメモリを端末ごとに抜き差しせず、PC・スマホ・タブレットなどから同じデータを利用できる。<br>
+                    私の場合は、使う時だけUSBを共有するようにしている。常にネットワークストレージとして使うのもありだろう。
+                </p>
+
+                <h3>USB端子の種類を気にしなくていい</h3>
+                <p>
+                    機器側とUSBメモリはUSB-Aポートにつなげる必要があるが、他の端末とはWi-Fi経由なので、Type-Cへの変換アダプターなどを用意する必要がない。<br>
+                    私はスマホやMacなどのポートにマグネット変換アダプタをつけているので、特にこの恩恵を受ける。
+                </p>
+                <h3>手持ちのストレージを簡易NASとして活用できる</h3>
+                <p>
+                    USBメモリだけでなく、外付けSSDやHDDもネットワークストレージとして使える。<br>
+                    専用NASを用意しなくても、手軽にファイル共有環境を作れる。<br>
+                    よりたくさんのストレージを共有したい場合は、VPNで自宅ネットワークに接続できるようにするといい。<br>
+                    VPN環境については<a href="vpn.html">コチラ</a>を参照。
+
+                </p>
+            </section>
+
+
+            <section>
+                <h2>使っているもの</h2>
+
+                <h3>GL.iNet MT3600BE (Beryl 7)</h3>
+                <p>
+                    USBメモリや外付けSSD、HDDを接続し、ネットワーク上で共有するために使用します。<br>
+                    MT3600BEの詳しいスペックについては<a href="travel.html">コチラ</a>を参照。<br>
+                    また、<strong>MT3000や、SFT1200でも同じことができる。</strong>
+                </p>
+
+                <h3>インターネット回線</h3>
+                <p>
+                    USBストレージの共有だけであれば、MT3600BEをインターネットに接続する必要はありません。<br>
+                    ただし、MT3600BEのWi-Fiに接続した機器でインターネットも同時に利用するため、私はFS050Wをリピーターで接続しています。<br>
+                    リピーターモードの説明は<a href="trabel.html">コチラ</a>。
+                    既存のルーターとLANケーブルで接続する方法でもいい。
+                </p>
+
+                <h3>USBメモリ・外付けSSD・HDD</h3>
+                <p> 
+                    共有したいストレージをMT3600BEのUSB-Aポートに接続します。<br>
+                    特別これがいいというものもないが、フォーマット形式には気をつける必要がある<br>
+                    APFSなどMac向けのフォーマットでは認識できないため、MacとWindowsの両方で扱いやすいexFATなどの形式がオススメ。</p>
+            </section>
+
+
+            <section>
+                <h2>実際の使用例</h2>
+
+                <h3><!-- 手順1 --></h3>
+                <p>
+                    <!-- 説明 -->
+                </p>
+
+                <h3><!-- 手順2 --></h3>
+                <p>
+                    <!-- 説明 -->
+                </p>
+
+                <h3><!-- 手順3 --></h3>
+                <p>
+                    <!-- 説明 -->
+                </p>
+
+            </section>
+
+
+            <section>
+                <h2>注意点・うまくいかなかったこと</h2>
+
+                <h3><!-- 注意点など --></h3>
+                <p>
+                    <!-- 説明 -->
+                </p>
+
+            </section>
+
+
+            <section>
+                <h2>関連する使い方</h2>
+                <ul>
+                    <li>
+                        <a href="travel.html">旅行・外出先でも快適にネットを使いたい</a>
+                    </li>
+                    <li>
+                        <a href="vpn.html">外出先から自宅ネットワークにつなぐ</a>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer>
+            <small>&copy; 2301135021 近藤</small>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

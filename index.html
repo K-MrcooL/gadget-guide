@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>やりたいことから探せる、ガジェット活用術</title>
+        <meta name="description" content="ガジェットやITを利用して、生活を便利にする方法を紹介するWebサイトです。">
+        <meta name="viewport" content="width=device-width">
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+                font-size: 16px;
+            }
+
+            #wrap {
+                width: 1000px;
+                margin: 0px auto;
+            }
+
+            @media(max-width:1000px){
+                #wrap{
+                    width: 100%;
+                }
+            }
+
+            body {
+                background-color: #f5f6f7;
+            }
+
+            header,
+            main,
+            footer {
+                border: 1px solid #9AA5B1;
+            }
+
+             .purpose-cards {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .purpose-card {
+                box-sizing: border-box;
+                width: calc(50% - 5px);
+                margin: 0;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .purpose-card h3 {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px;
+                color: white;
+                background-color: rgba(0,0,0,0.5);
+                font-size: 18px;
+            }
+
+            .purpose-card img {
+                width: 100%;
+            }
+
+            .purpose-card:hover img {
+                opacity: 0.7;
+            }
+
+            .purpose-card:hover h3 {
+                background-color: rgba(0,0,0,0.8);
+            }
+
+            header {
+                background-image: url("images/header.jpeg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            header h1 {
+                line-height: 300px;
+                font-size: 35px;
+                text-align: center;
+                color: white;
+                text-shadow: 2px 2px 1px gray;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            nav ul {
+                display: flex;
+                border: 1px solid #9AA5B1;
+                border-top: none;
+                border-bottom: none;
+            }
+
+            nav ul li {
+                flex: 1;
+                text-align: center;
+            }
+            
+            nav ul li:nth-of-type(2) {
+                border-left: 1px solid #9AA5B1;
+                border-right: 1px solid #9AA5B1;
+            }
+
+            nav ul li a {
+                display: block;
+                background-color: #344052;
+                line-height: 50px;
+                color: white;
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            section {
+                margin: 5px;
+            }
+
+            section h2 {
+                font-size: 25px;
+                border-bottom: 2px solid #344052;
+                margin-bottom: 10px;
+            }
+
+            section h3 {
+                font-size: 20px;
+            }
+
+            footer {
+                border-top: none;
+                background-color: #344052;
+                text-align: center;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+        <header>
+            <h1>やりたいことから探せる、ガジェット活用術</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#purpose">やりたいことから探す</a></li>
+                <li><a href="#gadgets">使用ガジェット</a></li>
+            </ul>
+        </nav>
+        <main>
+
+            <section>
+                <h2>このサイトについて</h2>
+                <p>
+                    ガジェットやITを使って、日常を少し便利にする方法を紹介しています。<br>
+                    実際に使用している環境をもとに、便利だったことや、うまくいかなかったことも交えて紹介します。
+                </p>
+            </section>
+            <section id="purpose">
+                <h2>何をしたい？</h2>
+                <p>興味のある項目を選択してみてください。</p>
+
+                <div class="purpose-cards">
+
+                <section class="purpose-card">
+                    <a href="travel.html">
+                    <img src="images/web_travel.jpg" alt="旅行先・外出先でも快適にネットを使いたい">
+                    <h3>旅行・外出先でも快適にネットを使いたい</h3>
+                    </a>
+                </section>
+
+                <section class="purpose-card">
+                    <a href="vpn.html">
+                    <img src="images/web_vpn.jpg" alt="外出先から自宅ネットワークにつなぎたい">
+                    <h3>外出先から自宅ネットワークにつなぎたい</h3>
+                    </a>
+                </section>
+
+                <section class="purpose-card">
+                    <a href="car_wifi.html">
+                    <img src="images/web_car.jpg" alt="車内をWi-Fi環境にしたい">
+                    <h3>車内をWi-Fi環境にしたい</h3>
+                    </a>
+                </section>
+                <section class="purpose-card">
+                    <a href="usb.html">
+                    <img src="images/web_USB.jpg" alt="USBメモリを抜き差しせずに共有したい">
+                    <h3>USBメモリを抜き差しせずに共有したい</h3>
+                    </a>
+                </section>
+
+                </div>
+            </section>
+            <section id="gadgets">
+                <h2>使用ガジェットから探す</h2>
+                <ul>
+                    <li>GL.iNet MT3600BE (Beryl 7)</li>
+                    <li>GL.iNet MT3000 (Beryl AX)</li>
+                    <li>GL.iNet SFT1200 (Opal)</li>
+                    <li>富士ソフト +F FS050W</li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <small>&copy; 2301135021 近藤 </small>
+        </footer>
+        </div>
+    </body>
+    </html>

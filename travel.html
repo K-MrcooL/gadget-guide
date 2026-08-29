@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>旅行・外出先でも快適にネットを使いたい</title>
+    <style>
+
+        * {
+                margin: 0px;
+                padding: 0px;
+                font-size: 16px;
+            }
+
+            #wrap {
+                width: 1000px;
+                margin: 0px auto;
+            }
+
+            @media(max-width:1000px){
+                #wrap{
+                    width: 100%;
+                }
+            }
+
+            body {
+                background-color: #f5f6f7;
+            }
+
+            header,
+            main,
+            footer {
+                border: 1px solid #9AA5B1;
+            }
+
+            header {
+                background-image: url("images/header.jpeg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            header h1 {
+                line-height: 180px;
+                font-size: 35px;
+                text-align: center;
+                color: white;
+                text-shadow: 2px 2px 1px gray;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            nav ul {
+                display: flex;
+                border: 1px solid #9AA5B1;
+                border-top: none;
+                border-bottom: none;
+            }
+
+            nav ul li {
+                flex: 1;
+                text-align: center;
+            }
+            
+            nav ul li:nth-of-type(2) {
+                border-left: 1px solid #9AA5B1;
+                border-right: 1px solid #9AA5B1;
+            }
+
+            nav ul li a {
+                display: block;
+                background-color: #344052;
+                line-height: 50px;
+                color: white;
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            section {
+                margin: 5px;
+            }
+
+            section h2 {
+                font-size: 25px;
+                border-bottom: 2px solid #344052;
+                margin-bottom: 10px;
+            }
+
+            section h3 {
+                font-size: 18px;
+                margin-top: 15px;
+            }
+
+            footer {
+                border-top: none;
+                background-color: #344052;
+                text-align: center;
+                color: white;
+            }
+
+        #connection-image{
+            display: block;
+            width: 55%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        #connection-image2{
+            display: block;
+            width: 40%;
+            height: auto;
+        }
+
+        .management-images {
+            display: flex;
+            gap: 10px;
+        }
+        .management-images img {
+            width: 200px;
+            height: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 10px 0 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #344052;
+            padding: 8px;
+        }
+        
+        th {
+            background-color: #f5f6f7;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+
+        <header>
+            <h1>やりたいことから探せる、ガジェット活用術</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#purpose">やりたいことから探す</a></li>
+                <li><a href="index.html#gadgets">使用ガジェット</a></li>
+            </ul>
+        </nav>
+
+    <main>
+        <section>
+            <h2>旅行・外出先でも快適にネットを使いたい</h2>
+            <p>ホテルやカフェなどの公共のWi-Fiを安全に使うことも、モバイル通信をWi-Fiとして使うこともできる。<br>
+                外出先でも、パソコンやタブレットを普段と同じようにインターネットにつなぐ方法を紹介します。<br>
+                
+            </p>
+        </section>
+
+        <section>
+            <h2>例えば…</h2>
+            <p>
+                私は旅行先で小型ルーターを使って、MacBookやiPadをインターネットに繋げています。<br>
+                家族旅行では、家族全員が快適にインターネットを利用しています。
+            </p>
+            <img id="connection-image" src="images/connection.jpg" alt="旅行先での接続イメージ">
+        </section>
+
+        <section>
+            <h2>何が便利なの？</h2>
+
+            <h3>複数の機器をまとめて接続できる</h3>
+            <p>
+                接続先は小型のルーター。接続の設定をするのはこのルーター１台だけでいい。<br>
+                それだけでノートPCもタブレットもアレもコレも…と、一つ一つ設定をしなくてよくなる。
+            </p>
+            <h3>Wi-Fiの設定を何度もしなくていい</h3>
+            <p>インターネットを利用したい機器で、小型のルーターに繋げる設定を1度だけやることで、次回以降は自動接続する。<br>
+                利用機器が多いほど、この便利さを感じるはず。<br>
+            </p>
+        </section>
+        <section>
+            <h2>使っているもの</h2>
+            <h3>GL.iNet MT3600BE (Beryl 7)</h3>
+            <p>
+                私が使用している小型のWi-Fiルーターです。<br>
+                スペックは以下を参照。<br>
+            </p>
+                <table>
+                    <tr>
+                        <th>Wi-Fi</th>
+                        <td>Wi-Fi 7（デュアルバンド）</td>
+                    </tr>
+                    <tr>
+                        <th>Wi-Fi速度</th>
+                        <td>2.4GHz：最大688Mbps<br>5GHz：最大2,882Mbps</td>
+                    </tr>
+                    <tr>
+                        <th>有線LAN</th>
+                        <td>2.5Gbps × 2ポート（WAN × 1、LAN × 1）</td>
+                    </tr>
+                    <tr>
+                        <th>USB</th>
+                        <td>USB 3.0 × 1</td>
+                    </tr>
+                    <tr>
+                        <th>電源</th>
+                        <td>USB Type-C（5V/3A、9V/3A、12V/2.5A）</td>
+                    </tr>
+                    <tr>
+                        <th>接続台数</th>
+                        <td>120台以上</td>
+                    </tr>
+                    <tr>
+                        <th>VPN</th>
+                        <td>WireGuard：最大1,100Mbps<br>OpenVPN-DCO：最大1,000Mbps</td>
+                    </tr>
+                    <tr>
+                        <th>サイズ・重量</th>
+                        <td>120 × 83 × 34mm / 205g</td>
+                    </tr>
+                </table>
+            
+            <p>
+            今回紹介する使用用途であれば、他のルーターでも構わないだろう。<br>
+            GL.iNetの製品を選ぶ理由としては別のページにあるVPNも利用したい時にオススメ。<br>
+            私としては、このMT3600BEが３台目であり、3代目のGL.iNet製品である。<br>
+            それまで使っていた他の２台も、他の用途で現役で活躍しているのは、また別の話。
+            </p>
+            
+            <h3>富士ソフト F+ FS050W</h3>
+            <p>小型ルーターを購入する前から持っているモバイルルーターです。<br>
+                スペックは以下を参照。<br>
+            </p>
+                
+                <table>
+                    <tr>
+                        <th>モバイル通信</th>
+                        <td>5G / 4G対応</td>
+                    </tr>
+                    <tr>
+                        <th>通信速度</th>
+                        <td>5G：受信最大2.8Gbps / 送信最大460Mbps</td>
+                    </tr>
+                    <tr>
+                        <th>Wi-Fi</th>
+                        <td>Wi-Fi 6（IEEE 802.11a/b/g/n/ac/ax）</td>
+                    </tr>
+                    <tr>
+                        <th>Wi-Fi速度</th>
+                        <td>最大1.2Gbps</td>
+                    </tr>
+                    <tr>
+                        <th>SIM</th>
+                        <td>eSIM + nanoSIM（デュアルSIM）</td>
+                    </tr>
+                    <tr>
+                        <th>USB</th>
+                        <td>USB Type-C（USB 3.2 Gen 1）</td>
+                    </tr>
+                    <tr>
+                        <th>接続台数</th>
+                        <td>Wi-Fi：32台 / USB：1台</td>
+                    </tr>
+                    <tr>
+                        <th>バッテリー</th>
+                        <td>4,000mAh</td>
+                    </tr>
+                    <tr>
+                        <th>連続通信時間</th>
+                        <td>5G：約9時間 / 4G：約11時間</td>
+                    </tr>
+                    <tr>
+                        <th>サイズ・重量</th>
+                        <td>約120 × 74 × 19mm / 約198g</td>
+                    </tr>
+                </table>
+
+            <p>
+            モデムの役割と、家族用の使い分けとして利用しています。<br>
+            これはなくても大丈夫です。スマートフォンのUSBテザリングがモデムとして動作します。
+            </p>
+        </section>
+
+        <section>
+            <h2>実際の使用例</h2>
+            
+           <h3>GL.iNet MT3600BEをType-Cで電源をとる。</h3>
+           <p>
+            電源：USB Type-C（5V/3A、9V/3A、12V/2.5A）に対応しているため、ご利用のACアダプタを確認してください。<br>
+            <strong>MT3600BEにはACアダプタと電源コードが付属されている</strong>ので、それを利用してもいい。<br>
+            余談ですが、前のモデルであるMT3600は5V/3Aにしか対応しておらず、MT3600BEは複数の電圧に対応しているため、従来機よりもPD対応のACアダプターやモバイルバッテリーを利用しやすくなっています。
+            </p>
+            <h3>MT3600BEとFS050W（またはスマホ）をAtoCケーブルでつなぎ、USBテザリング</h3>
+            <p>
+                ここは<strong>USBケーブルでスマホとUSBテザリング</strong>がもっともオススメ。<br>
+                ただしその場合、通信事業者でテザリングの有無を確認してください。<br>
+                私はスマホの取り回しが悪くなることや、バッテリーの問題でもともと持っていたFS050Wを活用しているだけである。<br>
+                入力はLANケーブル(WAN)もあるため、LANケーブルで接続できるルーターやモデムが置いてあれば、それを利用してもいい。<br>
+                ホテルやカフェのFree Wi-Fiに接続したい場合については<a href="#FRWiFi">コチラ</a>を参照。<br>
+            </p>
+            <h3>MT3600BEのSSIDとパスワードでWi-Fiに接続</h3>
+            <p>
+                PC、スマホ、タブレット、ゲーム機などをMT3600BEのルーターとWi-Fi接続設定をする。<br>
+                この設定は、1度だけでいい。次回以降は自動接続するので、USBテザリングで利用する場合は1.電源を入れる。2.スマホをUSBでつなげる。と、２ステップで簡単にWi-Fi環境が完成する。
+            </p>
+
+            <img id ="connection-image2" src="images/connection2.jpg" alt="実際の使用例">
+        </section>
+
+        <section id="FRWiFi">
+            <h2>ホテルやカフェのFree Wi-Fiを使いたい</h2>
+            <p>
+            MT3600BEを介してホテルやカフェのFree Wi-Fiを利用することができる。<br>
+            パソコンやスマホをFree Wi-Fiへ直接接続せず、ルーターのファイアウォールによって外部の端末と分離できるため、Free Wi-Fiへ直接接続するより安全性を高められる。<br>
+            ただし、ルーターを経由するだけですべての通信が暗号化されるわけではない。より安全に利用したい場合はVPNを併用する。<br>
+            VPN環境については<a href="vpn.html">コチラ</a>を参照。<br>
+            </p>
+
+            <h3>MT3600BEとWi-Fi接続した機器（スマホなど）で、管理画面に入る</h3>
+            <p>
+            管理画面への入り方は、ブラウザの検索バーにルーターのIPアドレス(192.168.8.1)を入力すると入れる。<br>
+            初回はパスワードの変更が必要で、2回目以降は変更したパスワードでログイン可能。<br>
+            ルーターのIPアドレスはスマホなどのWi-Fi設定の詳細からも確認できるため、「あれ？なんだっけ？」と思ったらそこで確認するとよい。<br>
+            </p>
+            <h3>リピーター接続</h3>
+            <p>
+                管理画面に入るとリピーターモードの設定ができる。<br>
+            </p>
+                <div class="management-images">
+                    <img src="images/MGscreen1.jpg" alt="管理画面その1">
+                    <img src="images/MGscreen2.jpg" alt="管理画面その2">
+                    <img src="images/MGscreen3.jpg" alt="管理画面その3">
+                </div>
+            <p>
+                リピーター接続画面に進んで、つなげたいSSIDを選択し、パスワードを入力する。<br>
+                ここでは好きなアクセスポイントを選べるので、ホテルやカフェのFree Wi-Fiでもいいし、モバイルルーターのSSIDや、スマホのWi-Fiテザリングなど。
+                使い方はいろいろ思い浮かべることができる。<br>
+                また、MT3600BEはマルチWANに対応している。<br>
+                マルチWANとは、簡単に言うと複数のインターネット回線を同時に接続し、使い分けられる機能。<br>
+                優先順位も選べるので、優先順位の1番上にUSBテザリング、２番目にリピーターと選択してもいいだろう。
+
+            </p>
+
+
+        </section>
+
+        <section>
+            <h2>注意点・うまくいかなかったこと</h2>
+            <h3>Androidスマホでは、USBが頻繁に切断された</h3>
+            <p>Xperia 1 VやGalaxy Z Fold7をUSBテザリングで接続した際、接続が頻繁に切れることがあった。<br>
+                同じケーブルでもiPhoneでは問題なく利用でき、USBケーブルを変更するとAndroidでも安定した。<br>
+                USB Type-Cケーブルは製品によって対応規格やデータ通信性能が異なるため、USBテザリングが不安定な場合はケーブルを変更すると改善することがある。<br>
+            </p>
+        </section>
+
+        <section>
+            <h2>GL.iNetで出来ることをもっと詳しく知りたい人へ</h2>
+            <ul>
+                <li><a href="vpn.html">外出先から自宅ネットワークにつなぐ</a></li>
+                <li><a href="usb.html">USBメモリを共有する</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <small>&copy; 2301135021 近藤 </small>
+    </footer>
+    </div>
+</body>
+</html>
