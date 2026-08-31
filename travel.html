@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>旅行・外出先でも快適にネットを使いたい</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <style>
 
         * {
@@ -91,6 +92,8 @@
             section h3 {
                 font-size: 18px;
                 margin-top: 15px;
+                border-left: 4px solid #344052;
+                padding-left: 8px;
             }
 
             footer {
@@ -116,6 +119,7 @@
         .management-images {
             display: flex;
             gap: 10px;
+            margin-top: 10px;
         }
         .management-images img {
             width: 200px;
@@ -134,6 +138,46 @@
         
         th {
             background-color: #f5f6f7;
+        }
+
+        @media (max-width: 800px) {
+            header h1{
+                line-height: normal;
+                font-size: 19px;
+                padding: 30px 0;
+            }
+            .management-images{
+                flex-wrap: wrap;
+            }
+
+            nav ul li{
+                flex: none;
+            }
+
+            nav ul li:nth-of-type(1){
+                width: 20%;
+            }
+
+            nav ul li:nth-of-type(2){
+                width: 50%;
+            }
+
+            nav ul li:nth-of-type(3){
+                width: 30%;
+            }
+            
+            nav ul li a{
+                font-size: 14px;
+                white-space: nowrap;
+            }
+
+            section h2{
+                font-size: 19px;
+            }
+
+            section h3{
+                font-size: 16px;
+            }
         }
         
     </style>
@@ -183,7 +227,7 @@
                 利用機器が多いほど、この便利さを感じるはず。<br>
             </p>
         </section>
-        <section>
+        <section id="spec">
             <h2>使っているもの</h2>
             <h3>GL.iNet MT3600BE (Beryl 7)</h3>
             <p>
