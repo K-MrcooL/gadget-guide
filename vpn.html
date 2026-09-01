@@ -1,10 +1,626 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="utf-8">
-    <title>外出先から自宅ネットワークにつなげたい</title>
+    <title>外出先から自宅ネットワークにつなぎたい</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 16px;
+        }
+
+        #wrap {
+            width: 1000px;
+            margin: 0px auto;
+        }
+
+        @media(max-width:1000px) {
+            #wrap {
+                width: 100%;
+            }
+        }
+
+        body {
+            background-color: #f5f6f7;
+        }
+
+        header,
+        main,
+        footer {
+            border: 1px solid #9AA5B1;
+        }
+
+        header {
+            background-image: url("images/header.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header h1 {
+            line-height: 180px;
+            font-size: 35px;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 1px gray;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        nav ul {
+            display: flex;
+            border: 1px solid #9AA5B1;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        nav ul li {
+            flex: 1;
+            text-align: center;
+        }
+
+        nav ul li:nth-of-type(2) {
+            border-left: 1px solid #9AA5B1;
+            border-right: 1px solid #9AA5B1;
+        }
+
+        nav ul li a {
+            display: block;
+            background-color: #344052;
+            line-height: 50px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        section {
+            margin: 5px;
+        }
+
+        section h2 {
+            font-size: 25px;
+            border-bottom: 2px solid #344052;
+            margin-bottom: 10px;
+        }
+
+        section h3 {
+            font-size: 18px;
+            margin-top: 15px;
+            border-left: 4px solid #344052;
+            padding-left: 8px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 10px 0；
+        }
+        th,
+        td {
+            border: 1px solid #344052;
+            padding: 8px;
+        }
+        th {
+            background-color: #f5f6f7;
+        }
+
+        footer {
+            border-top: none;
+            background-color: #344052;
+            text-align: center;
+            color: white;
+        }
+
+        .setting-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .flow-step {
+            padding: 10px;
+            border: 1px solid #9AA5B1;
+        }
+
+        .user-setting,
+        .folder-setting {
+            width: 60%;
+            margin: 15px auto;
+        }
+        
+        .setting-card {
+            border: 1px solid #9AA5B1;
+            padding: 15px;
+        }
+        
+        .setting-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .setting-arrow {
+            text-align: center;
+            font-size: 25px;
+            margin: 5px 0;
+        }
+
+        .input-sample {
+            display: inline-block;
+            width: 200px;
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #9AA5B1;
+            background-color: white;
+        }
+
+        .port-setting {
+            width: 60%;
+            margin: 15px auto;
+            text-align: center;
+        }
+        
+        #connection_vpn {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 800px) {
+
+            header h1 {
+                line-height: normal;
+                font-size: 19px;
+                padding: 30px 0;
+            }
+
+            nav ul li {
+                flex: none;
+            }
+
+            nav ul li:nth-of-type(1) {
+                width: 20%;
+            }
+
+            nav ul li:nth-of-type(2) {
+                width: 50%;
+            }
+
+            nav ul li:nth-of-type(3) {
+                width: 30%;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                white-space: nowrap;
+            }
+
+            section h2 {
+                font-size: 19px;
+            }
+
+            section h3 {
+                font-size: 16px;
+            }
+
+            .vpn-map-scroll {
+                overflow-x: auto;
+            }
+            .vpn-map-scroll #connection_vpn {
+                width: 900px;
+                max-width: none;
+            }
+            
+            .user-setting,
+            folder-setting {
+                width: 90%;
+            }
+
+            input-sample {
+                width: 80%;
+                box-sizing: border-box;
+            }
+            .port-setting {
+                width: 90%;
+            }
+
+            .setting-flow {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .user-setting,
+            .folder-setting{
+                width: 90%;
+            }
+
+            .input-sample {
+                width: 80%;
+                box-sizing: border-box;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
-    <h1>外出先から自宅ネットワークにつなげたい</h1>
+    <div id="wrap">
+
+        <header>
+            <h1>やりたいことから探せる、ガジェット活用術</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#purpose">やりたいことから探す</a></li>
+                <li><a href="index.html#gadgets">使用ガジェット</a></li>
+            </ul>
+        </nav>
+
+        <main>
+
+            <section>
+                <h2>外出先から自宅ネットワークにつなぎたい</h2>
+                <p>
+                    VPNを利用すると、外出先から自宅のネットワークに安全に接続できます。<br>
+                    自宅にいなくても、自宅のPCをリモート操作したり、共有ストレージのデータにアクセスしたりできるようになります。
+                </p>
+            </section>
+
+            <section>
+                <h2>例えば…</h2>
+                <p>
+                    私の場合は、外出先から自宅のMac miniを画面共有で操作したいと思ったことが、VPNサーバーを構築したきっかけです。<br>
+                    VPNで自宅のネットワークに接続すると、外出先からPCをリモート操作したり、設定済みの共有ファイルにアクセスしたりできます。<br>
+                    また、自宅ネットワーク内にあるルーターなどの管理画面にも、外出先からアクセスできるようになります。
+                </p>
+            </section>
+
+            <section>
+                <h2>何が便利なの？</h2>
+
+                <h3>タブレットをノートPCのように活用できる</h3>
+                <p>
+                    iPadなどのタブレットとキーボードがあれば、外出先から自宅のPCへリモート接続して、PCのアプリやデータを利用できます。<br>
+                    ノートPCを持っていなくても、外出先で必要なときに自宅のPC環境を利用できます。
+                </p>
+
+                <h3>自宅PCや外部ストレージが簡易NASのように使える</h3>
+                <p>
+                    自宅PCでファイル共有を設定しておけば、外出先から自宅PCのデータへアクセスできます。<br>
+                    PCに接続している外付けSSDやHDDも共有できるため、自宅にあるストレージを簡易NASのように活用できます。
+                </p>
+
+            </section>
+
+            <section>
+                <h2>使っているもの</h2>
+
+                <h3>GL.iNet MT3000 (Beryl AX)</h3>
+                <p>
+                    VPNサーバー側のルーターとして使用しています。<br>
+                    スペックは以下を参照。
+                </p>
+                <table>
+                    <tr>
+                        <th>Wi-Fi</th>
+                        <td>Wi-Fi 6（デュアルバンド）</td>
+                    </tr>
+                    <tr>
+                        <th>Wi-Fi速度</th>
+                        <td>2.4GHz：最大574Mbps<br>5GHz：最大2,402Mbps</td>
+                    </tr>
+
+                    <tr>
+                        <th>有線LAN</th>
+                        <td>2.5Gbps × 1ポート（WAN）、1Gbps × 1ポート（LAN）</td>
+                    </tr>
+                    <tr>
+                        <th>USB</th>
+                        <td>USB 3.0 × 1</td>
+                    </tr>
+                    <tr>
+                        <th>電源</th>
+                        <td>USB Type-C（5V/3A）</td>
+                    </tr>
+                    <tr>
+                        <th>接続台数</th>
+                        <td>70台以上</td>
+                    </tr>
+                    <tr>
+                        <th>VPN</th>
+                        <td>WireGuard：最大300Mbps<br>OpenVPN：最大150Mbps</td>
+                    </tr>
+                    <tr>
+                        <th>サイズ・重量</th>
+                        <td>120 × 83 × 34mm / 196g</td>
+                    </tr>
+                </table>
+                <p style="font-size: 13px;">
+                    ※VPN速度はメーカー公称値です。実際の速度はネットワーク環境によって異なり、VPNサーバーとして使用する場合は公称値より遅くなります。
+                </p>
+                <p>
+                    持ち歩いているのは後継機のMT3600BEなのですが、余ったMT3000でVPNサーバーを構築しました。<br>
+                    MT3000はサーバーとして、MT3600BEはクライアントとして利用しています。
+                </p>
+
+                <h3>自宅のルーター</h3>
+                <p>
+                    MT3000は自宅のルーターにLANケーブルで接続して使用しています。<br>
+                    自宅のルーターは、普段インターネット接続に使用しているもので構いません。<br>
+                    光回線事業者から提供・レンタルされているルーターや、ONUとルーターが一体になった機器でも使用できます。<br>
+                    外出先からMT3000のVPNサーバーへ接続できるように、自宅のルーター側でも設定が必要です。
+                </p>
+                    
+                </p>
+                
+                <h3>VPNに接続する端末</h3>
+                <p>
+                    スマートフォンやタブレット端末、ノートPCになどを使用します。<br>
+                    私はMT3000の後継機であるMT3600BEをクライアントとして使用しています。<br>
+                    ちなみに、その前はSFT1200をサーバー、MT3000をクライアントとして持ち歩いていました。<br>
+                    SFT1200は現在もアップデートの対象となっており、比較的安く手に入るため、コスパのいいVPNサーバーとして使えると思います。
+                </p>
+            </section>
+
+            <section>
+                <h2>実際の使用例</h2>
+
+                <h3>MT3000を自宅ルーターに接続する</h3>
+                <p>
+                    まず、VPNサーバーとして使用するMT3000を自宅のネットワークに接続します。<br>
+                    自宅ルーターのLANポートとMT3000のWANポートをLANケーブルで接続し、MT3000の電源を入れます。<br>
+                    今回は、以下のような構成でVPNサーバーを設置します。
+                </p>
+                <div class="vpn-map-scroll">
+                <img id="connection_vpn" src="images/vpn-map.jpg" alt="VPN接続構成図">
+                </div>
+
+                <h3>MT3000でWireGuardサーバーを設定する</h3>
+                <p>
+                    MT3000の管理画面を開き、WireGuardサーバーの設定を行います。<br>
+                    管理画面の「VPN」から「WireGuardサーバー」を開きます。
+                </p>
+                
+                <div class="setting-flow">
+                    <span class="flow-step">① VPNを開く</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step">② WireGuardサーバーを開く</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step">③「設定を作成」を選択</span>
+                </div>
+                <p>
+                    「設定を作成」を選択すると、WireGuardサーバーの設定が自動で作成されます。<br>
+                    IPv4アドレスやリッスンポートなどは初期値が設定されているため、特に変更する必要がなければそのまま使用できます。<br>
+                    <strong>リッスンポートは自宅のルーター設定で使用します。</strong>メモを取っておいてください。
+                </p>
+
+                <h3>MT3000のIPアドレスを確認しておく</h3>
+                <p>
+                    このあと自宅ルーターでポート開放を設定する際に、先ほど確認した<strong>リッスンポート</strong>と、MT3000のIPアドレスを使用します。<br>
+                    MT3000のIPアドレスは、管理画面の「インターネット」>「イーサネット」>「IPアドレス」で確認できます。<br>
+                    ※192.168.8.1ではなく、自宅ルーターからMT3000に割り当てられたWAN側IPアドレス
+                </p>
+
+                <h3>MT3000のIPアドレスを固定する</h3>
+                <p>
+                    自宅ルーターからMT3000に割り当てられるIPアドレスが変わると、ポート開放の転送先と一致しなくなってしまいます。<br>
+                    そのため、自宅ルーターの管理画面でMT3000のIPアドレスが変わらないように設定しておきます。<br>
+                    この機能は「DHCP予約」「固定割り当て」など、ルーターによって名称が異なります。
+                </p>
+                
+                <h3>自宅のルーターでポート開放を設定する</h3>
+                <p>
+                    MT3000を自宅ルーターの下に接続している場合、外出先から届いたWireGuardの通信をMT3000へ転送する設定が必要です。<br>
+                    自宅ルーターの管理画面でポート開放（ポート転送）の設定を行い、WireGuardで使用するポートをMT3000へ転送します。<br>
+                    設定項目の名称や設定方法はルーターによって異なります。<br>
+                    「ポート開放」「ポート転送」などの名称で設定されている場合があります。
+                </p>
+                <div class="port-setting">
+                    <h4 class="port-label">外部からのWireGuard通信</h4>
+                    <div class="setting-arrow">↓</div>
+                    <div class="setting-card">
+                        <h4>自宅ルーター</h4>
+                        <p>プロトコル：UDP</p>
+                        <p>ポート：WireGuardのリッスンポート</p>
+                        <p>転送先：MT3000のIPアドレス</p>
+                    </div>
+                    
+                    <div class="setting-arrow">↓</div>
+                    
+                    <div class="setting-card">
+                        <h4>MT3000</h4>
+                        <p>WireGuardサーバー</p>
+                    </div>
+                </div>
+
+                <h3>MT3000でDDNSを設定する</h3>
+                
+                <p>
+                    外出先からVPNへ接続するためには、自宅のグローバルIPアドレスを接続先として指定する必要があります。<br>
+                    ただし、グローバルIPアドレスは変更されることがあるため、私はMT3000のDDNSを利用しています。<br>
+                    DDNSを利用すると、グローバルIPアドレスの代わりに固定のドメイン名を使って、自宅のMT3000へ接続できるようになります。
+                </p>
+
+                <div class="setting-flow">
+                    <span class="flow-step">① アプリケーションを開く</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step">② ダイナミックDNSを開く</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step">③ DDNSを有効にする</span>
+                </div>
+
+                <p>
+                    DDNSを有効にすると、MT3000に割り当てられたDDNSのドメイン名を確認できます。<br>
+                    このドメイン名は、このあとWireGuardクライアントの接続先を設定するときに使用します。
+                </p> 
+
+            <h3>接続する端末の設定を作成する（クライアントの設定）</h3>
+            <p>
+                次に、外出先からVPNへ接続する端末の設定を作成します。<br>
+                MT3000のWireGuardサーバーでは、接続する端末ごとに「ピア」を追加し、クライアント用の設定を作成できます。<br>
+                 「ピアを追加」から接続する機器などの名前を入力し、「適用」を選択します。
+            </p>
+
+            <div class="setting-flow">
+                <span class="flow-step">① ピアを追加</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-step">② 機器などの名前を入力</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-step">③「適用」を選択</span>
+            </div>
+            
+            <p>
+                QRコードが出てきますが、それを使用する前に「アドレス」から先ほど設定したDDNSのドメイン名を選択します。<br>
+                DDNSを選択すると、クライアント設定の「Endpoint」がDDNSのドメイン名に変更されます。<br>
+                QRコードまたは設定ファイルを使って、接続する端末にWireGuardの設定を登録します。
+            </p>
+
+            <p>
+                <strong>注意：</strong>
+                「アドレス」でDDNSを選択しても、この選択を保存するための「適用」ボタンはありません。<br>
+                QRコードを表示したり設定ファイルをダウンロードしたりする際は、その都度DDNSが選択されていることを確認してください。
+            </p>
+
+            <h3>クライアントからVPNへ接続する</h3>
+            <p>
+                作成したピアの設定を、外出先で使用する端末に登録します。<br>
+                スマートフォンやタブレット、PCから直接接続する方法と、MT3600BEなどのルーターをWireGuardクライアントとして使用する方法があります。
+            </p>
+
+            <p>
+                スマートフォンやタブレットでは、WireGuardアプリをインストールし、MT3000で作成したピアのQRコードを読み取って設定を登録できます。<br>
+                設定を有効にすると、自宅のMT3000へVPN接続できます。
+            </p>
+            
+            <h3>スマートフォン・タブレット・PCから接続する</h3>
+
+            <p>
+                スマートフォンやタブレットでは、WireGuardアプリをインストールし、MT3000で作成したピアのQRコードを読み取って設定を登録できます。<br>
+                設定を有効にすると、自宅のMT3000へVPN接続できます。<br>
+                MacなどのPCでは、WireGuardアプリにダウンロードした設定ファイル（.conf）をインポートして設定できます。<br>
+                私は普段、MT3600BEをWireGuardクライアントとして使用しているため、MacにはVPNの設定をしていません。
+            </p>
+
+            <h3>MT3600BEから接続する</h3>
+
+            <p>
+                私は外出時にMT3600BEを持ち歩き、WireGuardクライアントとして使用しています。<br>
+                MT3000で作成したピアの設定ファイル（.conf）をMT3600BEに登録することで、自宅のVPNサーバーへ接続できます。<br>
+                MT3600BE側でVPNに接続するため、スマートフォンやタブレット、PCなど、それぞれの端末にVPNを設定する必要がありません。
+            </p>
+
+            <div class="setting-flow">
+                <span class="flow-step">① VPNを開く</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-step">② WireGuardクライアントを選択</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-step">③「手動で追加する」を選択</span>
+            </div>
+
+            <p>
+                「手動で追加する」を選択すると、新しいプロバイダーが作成されます。<br>
+                「Home Network」など分かりやすい名前を付け、MT3000からダウンロードした設定ファイル（.conf）をアップロードします。
+            </p>
+
+            <div class="setting-flow">
+                <span class="flow-step">① 任意の名前を付ける</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-step">② .confファイルをアップロード</span>
+            </div>
+
+            <p>
+                設定ファイルを登録すると、WireGuardクライアントの一覧に作成した設定が表示されます。<br>
+                登録した設定のメニューから「開始」を選択すると、自宅のVPNサーバーへ接続できます。
+            </p>
+
+            <p>
+                また、「VPNダッシュボード」ではVPNトンネルを作成し、MT3600BEに接続している機器のうち、どの通信をVPN経由にするか設定することもできます。<br>
+                すべての機器をVPN経由にするだけでなく、指定した機器だけをVPN経由にするなど、用途に合わせた設定ができます。
+            </p>
+
+            <h3>自宅のMacを画面共有で操作する</h3>
+            <p>
+                VPNへ接続すると、外出先から自宅ネットワーク内のMacへアクセスできます。<br>
+                私は自宅のMac miniで画面共有を有効にして、外出先からリモート操作できるようにしています。<br>
+                VPN接続後、自宅のMac miniを指定して画面共有を開始すると、外出先から自宅のMacを操作できます。
+                また、Mac miniのIPアドレスが変わると接続できなくなるため、自宅ルーターのDHCP予約（固定割り当て）を利用して、IPアドレスが変わらないようにしています。
+            </p>
+            <p>
+                Macから接続する場合は、Finderの「移動」→「サーバへ接続」を開き、
+                <code>vnc://Mac miniのIPアドレス</code>を入力すると、macOS標準の「画面共有」で接続できます。<br>
+                iPadやスマートフォンから操作する場合は、Jump DesktopなどのVNCに対応したリモートデスクトップアプリを使用します。
+            </p>
+
+            <h3>自宅の共有ファイルへアクセスする</h3>
+            <p>
+                VPNへ接続すると、自宅ネットワーク内で共有しているファイルにも外出先からアクセスできます。<br>
+                私はMac miniの内蔵ストレージや、Mac miniに接続した外付けストレージを共有して利用しています。<br>
+                SMBを使った共有ファイルへのアクセス方法は、USB共有のページでも紹介しています。
+            </p>
+            <p>
+                <a href="usb.html">USBメモリを抜き差しせずに共有したい →</a>
+            </p>
+
+            <h3 id="free-wifi">補足：Free Wi-FiでVPNを利用する</h3>
+            
+            <p>
+                私は普段Free Wi-Fiを利用していませんが、ホテルやカフェなどのFree Wi-Fiを利用する場合にもVPNを活用できます。<br>
+                MT3600BEをFree Wi-Fiへリピーター接続し、自宅のMT3000へVPN接続することで、MT3600BEと自宅のVPNサーバー間の通信を暗号化できます。
+            </p>
+            <p>
+                MT3600BEをFree Wi-Fiへ接続する方法は、旅行・外出先でのネット接続のページで紹介しています。<br>
+                <a href="travel.html">旅行・外出先でも快適にネットを使いたい →</a>
+            </p>
+
+            </section>
+        
+            <section>
+                <h2>注意点・うまくいかなかったこと</h2>
+
+                <h3>自宅のネットワーク設定を変更するときは注意</h3>
+                <p>
+                    VPNを使って外出先から自宅のネットワーク設定を変更する場合は注意が必要です。<br>
+                    VPNサーバーや自宅PCのIPアドレス、ルーターの設定などを変更すると、設定を間違えたときにVPN接続が切れ、そのまま自宅へアクセスできなくなる可能性があります。<br>
+                    重要なネットワーク設定の変更は、できるだけ自宅で行う方が安心です。
+                </p>
+
+            </section>
+
+            <section>
+                <h2>関連する使い方</h2>
+                <ul>
+                    <li>
+                        <a href="travel.html">旅行・外出先でも快適にネットを使いたい</a>
+                    </li>
+                    <li>
+                        <a href="usb.html">USBメモリを抜き差しせずに共有したい</a>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer>
+            <small>&copy; 2026 Gadget Guide</small>
+        </footer>
+
+    </div>
+
 </body>
+
 </html>

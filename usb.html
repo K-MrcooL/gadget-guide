@@ -120,24 +120,56 @@
             color: white;
         }
 
-        #connection_usb{
-            display: block;
-            width: 55%;
-            height: auto;
-            margin: 0 auto;
-            margin-top: 10px;
+         .setting-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
         }
 
-        .usb-images {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
+        .flow-step {
+            padding: 10px;
+            border: 1px solid #9AA5B1;
+        }
+
+        .user-setting,
+        .folder-setting {
+            width: 60%;
+            margin: 15px auto;
+        }
+        
+        .setting-card {
+            border: 1px solid #9AA5B1;
+            padding: 15px;
+        }
+        
+        .setting-card h4 {
+            font-size: 18px;
             margin-bottom: 10px;
         }
         
-        .usb-images img {
+        .setting-arrow {
+            text-align: center;
+            font-size: 25px;
+            margin: 5px 0;
+        }
+
+        .input-sample {
+            display: inline-block;
             width: 200px;
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #9AA5B1;
+            background-color: white;
+        }
+
+            #connection_usb{
+            display: block;
+            width: 70%;
             height: auto;
+            margin: 0 auto;
+            margin-top: 10px;
         }
 
         code {
@@ -152,8 +184,9 @@
                 font-size: 19px;
                 padding: 30px 0;
             }
-            .usb-images{
-                flex-wrap: wrap;
+
+            #connection_usb{
+                width: 100%;
             }
 
             nav ul li{
@@ -184,6 +217,24 @@
             section h3{
                 font-size: 16px;
             }
+
+            .setting-flow {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .user-setting,
+            .folder-setting{
+                width: 90%;
+            }
+
+            .input-sample {
+                width: 80%;
+                box-sizing: border-box;
+            }
         }
 
     </style>
@@ -211,7 +262,7 @@
                 <h2>USBメモリを抜き差しせずに共有したい</h2>
                 <p>
                     PCにUSBメモリを差してデータを編集して、スマホで参照して…という作業をなくせます。<br>
-                    ハードディスクやSSDをつなげることもできる。という方法を紹介します。<br>
+                    USBメモリだけではなく、HDDやSSDをつなげて共有することもできる方法を紹介します。<br>
                 </p>
             </section>
 
@@ -220,7 +271,7 @@
                 <h2>例えば…</h2>
                 <p>
                     MT3600BEを使ってUSBメモリをネットワークストレージとして扱うことができます。<br>
-                    それによって、MT3600BEと接続しているPCもやスマホでUSBメモリのデータを参照、または編集できます。
+                    それによって、MT3600BEに接続しているPCやスマホでUSBメモリのデータを参照、編集できます。
                 </p>
                 <img id="connection_usb" src="images/connection_usb.jpg" alt="接続例">
             </section>
@@ -237,14 +288,14 @@
 
                 <h3>USB端子の種類を気にしなくていい</h3>
                 <p>
-                    機器側とUSBメモリはUSB-Aポートにつなげる必要がありますが、他の端末とはWi-Fi経由なので、Type-Cへの変換アダプターなどを用意する必要がありません。<br>
-                    私はスマホやMacなどのポートにマグネット変換アダプタをつけているので、特にこの恩恵を受ける。
+                    USBメモリはMT3600BEのUSB-Aポートにつなげる必要がありますが、他の端末とはWi-Fi経由なので、Type-Cへの変換アダプターなどを用意する必要がありません。<br>
+                    私はスマホやMacなどのポートにマグネット変換アダプタをつけているので、特にこの恩恵を受けています。
                 </p>
                 <h3>手持ちのストレージを簡易NASとして活用できる</h3>
                 <p>
                     USBメモリだけでなく、外付けSSDやHDDもネットワークストレージとして使えます。<br>
                     専用NASを用意しなくても、手軽にファイル共有環境を作れます。<br>
-                    よりたくさんのストレージを共有したい場合は、VPNで自宅ネットワークに接続できるようにするとよい。<br>
+                    外出先からも自宅のストレージを利用したい場合は、VPNで自宅ネットワークに接続できるようにする方法もあります。<br>
                     VPN環境については<a href="vpn.html">コチラ</a>を参照。
 
                 </p>
@@ -284,8 +335,12 @@
                     ここではインターネットに接続していなくても構いません。<br>
                     管理画面に入ったら、メニューからアプリケーション > ネットワークストレージのページまでいきます。
                 </p>
-                <div class="usb-images">
-                    <img src="images/USBimg1.jpg" alt="設定画面"> 
+                <div class="setting-flow">
+                    <span class="flow-step">① 管理画面を開く</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step">② アプリケーション</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step">③ ネットワークストレージ</span>
                 </div>
 
                 <h3>GL.iNet MT3600BEのUSB-AポートにUSBメモリを挿し、SMBを有効化する</h3>
@@ -294,50 +349,81 @@
                     ここではUSBメモリを例として出していますが、USB-Aで接続できるのであれば、HDDでもSSDでも構いません。<br>
                     ストレージを挿すと、USBメモリが認識されます。もし表示されなければ更新ボタンを押しましょう。<br>
                     もし認識されないのであれば、フォーマットのせいかも？exFATが取り扱いしやすく、オススメです。<br>
-                    そのすぐ下の画面で、SMBを有効化する設定が可能。"有効化samba"のスイッチをONにして、適用ボタンを押す。
+                    無事認識されたら、Sambaを有効化し、「適用」を選択します。
                 </p>
-                <div class="usb-images">
-                    <img src="images/USBimg2.jpg" alt="設定画面">
-                    <img src="images/USBimg3.jpg" alt="設定画面">
+               <div class="setting-flow">
+                <span class="flow-step">① USBストレージを接続</span>
+                <span class=flow-arrow>→</span>
+                <span class="flow-step">② 認識を確認</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-step">③ Sambaを有効化</span>
+                <span class="flow-arrow">→</span>
+                 <span class="flow-step">④ 適用</span>
                 </div>
 
                 <h3>ユーザー管理・共有フォルダ設定</h3>
                 <p>
-                    ユーザー管理の設定画面で、ユーザー名とパスワードを設定する。<br>
-                    USBメモリを共有するために設定できるユーザーは、最大で10人まで設定できる。<br>
-                    個人で利用する場合、1つ登録しておけば問題ないと思います。複数人で常に共有するなら、個別に設定することをオススメします。<br>
-                    後述の共有フォルダの設定でフォルダ毎に読み書き可・読み込み限定などの設定もできます。
+                     ネットワークストレージの「ユーザー管理」から、共有ストレージへアクセスするためのユーザー名とパスワードを設定します<br>
+                    ユーザーは、最大で10人まで設定できます。<br>
+                    個人で利用する場合、1つ登録しておけば問題ないと思います。複数人で共有するなら、個別に設定することをオススメします。<br>
+                    このあと設定する共有フォルダでは、ユーザーごとに読み書き可能・読み込みのみなどの権限を設定できます。
                 </p>
-                <div class="usb-images">
-                    <img src="images/USBimg4.jpg" alt="設定画面">
-                    <img src="images/USBimg5.jpg" alt="設定画面">
+
+                <div class="user-setting">
+
+                    <div class="setting-card">
+                        <h4>ユーザー管理</h4>
+                        <p>「＋ ユーザーを追加」を選択</p>
+                    </div>
+                    <div class="setting-arrow">↓</div>
+                    <div class="setting-card">
+                        <h4>ユーザーを追加</h4>
+                        <p>ユーザー名
+                            <span class="input-sample">MT3600</span>
+                        </p>
+                        <p>パスワード
+                            <span class="input-sample">●●●●●●●●</span>
+                        </p>
+                        <p>入力したら「適用」を選択</p>
+                    </div>
                 </div>
+                
                 <p>
                     共有フォルダの画面では、共有したいフォルダを選んで設定できます。<br>
                     私は自分しか使わないので、ユーザーは1人、まるごと読み書き可能にしていますが、共有するフォルダを限定することもできます。
                 </p>
-                <div class="usb-images">
-                    <img src="images/USBimg6.jpg" alt="設定画面">
-                    <img src="images/USBimg7.jpg" alt="設定画面">
-                    <img src="images/USBimg8.jpg" alt="設定画面">
+                <div class="folder-setting">
+                    <div class="setting-card">
+                        <h4>共有フォルダを追加</h4>
+                        <p>共有したいストレージまたはフォルダを選択</p>
+                    </div>
+                    <div class="setting-arrow">↓</div>
+                    <div class="setting-card">
+                        <h4>共有フォルダの権限を設定</h4>
+                        <p>📁 家族用フォルダ</p>
+                        <p>├ 読み書き可能：自分</p>
+                        <p>└ 読み込み限定：家族</p>
+                        <p>設定したら「適用」を選択</p>
+                    </div>
                 </div>
+
                 <p>
-                    共有フォルダを追加する画面（画像2枚目）で「▶」マークを押すとフォルダの階層が表示できます。<br>
-                    自分用と家族用でフォルダを分けて、ユーザーを分けて使うこともでき、権限もそれぞれ設定できます。
+                    共有フォルダを追加するときは、USBストレージ全体を選択するだけでなく、ストレージ内のフォルダを指定することもできます。<br>
+                    自分用と家族用でフォルダを作り、ユーザーを分けて使うこともでき、権限もそれぞれ設定できます。
                 </p>
                 
 
                 <h3>GL.iNet MT3600BEをリピーターモードでインターネットに接続する</h3>
                 <p>
                     前述しましたが、USBメモリを共有したいだけならば、インターネットに接続する必要はありません。<br>
-                    だた、USBメモリを共有している間だけインターネット接続不可なのはかなり不便。<br>
+                    ただ、USBメモリを共有している間だけインターネット接続不可なのはかなり不便。<br>
                     私は普段、FS050WのUSBテザリングとリピーター両方設定していて、テザリングで利用しているUSBを抜くと、リピーター接続されるようにしている。<br>
                     自宅などで常設して利用する場合は、自宅のルーターのLANポートとMT3600BEのWANポートをLANケーブルで接続する方法もあります。<br>
                 </p>
 
                 <h3>スマホやPCからデータを参照する </h3>
             <p>
-                設定が終わったら、実際に共有ファイルの中身確認してみましょう。<br>
+                設定が終わったら、実際に共有ファイルの中身を確認してみましょう。<br>
                 <strong>iPhone・iPadの場合：</strong><br>
                 Safariのアドレス欄に<code>smb://192.168.8.1</code>と入力すると、「ファイル」アプリが開き、共有フォルダへアクセスできます。<br>
                 または、「ファイル」アプリを開き、「…」→「サーバへ接続」を選択し、<code>smb://192.168.8.1</code>を入力します。<br>
@@ -367,11 +453,11 @@
                 <h3>Macに接続していたSSDを共有しようとして失敗</h3>
                 <p>
                     何度も言及していることになりますが、APFSなどMac向けのフォーマットでは認識できません。<br>
-                    exFATなど形式に再フォーマットする場合、中のデータが消えてほしくないのなら、
+                    exFATなどの形式に再フォーマットする場合、中のデータが消えてほしくないのなら、
                     別のストレージにデータを一度逃がし、再フォーマット後にもう一度データを戻す必要があります。<br>
                     これは少し面倒でした。<br>
                 </p>
-                <h3>Galaxyの純正フォルダアプリでは接続できなかった</h3>
+                <h3>Galaxyの標準ファイル管理アプリでは接続できなかった</h3>
                 <p>
                     Galaxyの標準ファイル管理アプリ「マイファイル」から共有フォルダを追加しようとしましたが、私の環境では接続することができませんでした。
                     同じアプリから自宅のMac miniで共有しているストレージには接続できているため、MT3600BEのSMBとの相性や設定などが原因の可能性があります。
@@ -409,7 +495,7 @@
         </main>
 
         <footer>
-            <small>&copy; 2301135021 近藤</small>
+            <small>&copy; 2026 Gadget Guide</small>
         </footer>
 
     </div>
