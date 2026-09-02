@@ -1,10 +1,394 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="utf-8">
-    <title>車内をWi-Fi環境にしたい</title>
+    <title>外出先から自宅ネットワークにつなぎたい</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 16px;
+        }
+
+        #wrap {
+            width: 1000px;
+            margin: 0px auto;
+        }
+
+        @media(max-width:1000px) {
+            #wrap {
+                width: 100%;
+            }
+        }
+
+        body {
+            background-color: #f5f6f7;
+        }
+
+        header,
+        main,
+        footer {
+            border: 1px solid #9AA5B1;
+        }
+
+        header {
+            background-image: url("images/header.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header h1 {
+            line-height: 180px;
+            font-size: 35px;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 1px gray;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        nav ul {
+            display: flex;
+            border: 1px solid #9AA5B1;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        nav ul li {
+            flex: 1;
+            text-align: center;
+        }
+
+        nav ul li:nth-of-type(2) {
+            border-left: 1px solid #9AA5B1;
+            border-right: 1px solid #9AA5B1;
+        }
+
+        nav ul li a {
+            display: block;
+            background-color: #344052;
+            line-height: 50px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        section {
+            margin: 5px;
+        }
+
+        section h2 {
+            font-size: 25px;
+            border-bottom: 2px solid #344052;
+            margin-bottom: 10px;
+        }
+
+        section h3 {
+            font-size: 18px;
+            margin-top: 15px;
+            border-left: 4px solid #344052;
+            padding-left: 8px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 10px 0；
+        }
+        th,
+        td {
+            border: 1px solid #344052;
+            padding: 8px;
+        }
+        th {
+            background-color: #f5f6f7;
+        }
+
+        footer {
+            border-top: none;
+            background-color: #344052;
+            text-align: center;
+            color: white;
+        }
+        #connection_car {
+            display: block;
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 800px) {
+
+            header h1 {
+                line-height: normal;
+                font-size: 19px;
+                padding: 30px 0;
+            }
+
+            nav ul li {
+                flex: none;
+            }
+
+            nav ul li:nth-of-type(1) {
+                width: 20%;
+            }
+
+            nav ul li:nth-of-type(2) {
+                width: 50%;
+            }
+
+            nav ul li:nth-of-type(3) {
+                width: 30%;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                white-space: nowrap;
+            }
+
+            section h2 {
+                font-size: 19px;
+            }
+
+            section h3 {
+                font-size: 16px;
+            }
+
+            #connection_car {
+                width: 100%;
+            }
+        }
+        
+    </style>
 </head>
 <body>
-    <h1>車内をWi-Fi環境にしたい</h1>
+    <div id="wrap">
+
+        <header>
+            <h1>やりたいことから探せる、ガジェット活用術</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#purpose">やりたいことから探す</a></li>
+                <li><a href="index.html#gadgets">使用ガジェット</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            
+            <section>
+                <h2>車内をWi-Fi環境にしたい</h2>
+                <p>
+                    旅行などで車で長距離移動する時、皆で使えるWi-Fiがあったら便利ですよね。<br>
+                    ここでは車の中をWi-Fi環境にして、快適にインターネットが使える方法を紹介します。
+                </p>
+            </section>
+            
+            <section>
+                <h2>例えば…</h2>
+                <p>
+                    車内をWi-Fi環境にする方法はいくつかあります。<br>
+                    手軽なのは、FS050Wのようにバッテリーレスでも動作できるモバイルルーターや、USBモデムなどを車内で使用する方法です。<br>
+                    私の場合は、FS050Wをそのまま使用したり、SFT1200を車内に常設してFS050Wやスマートフォンの通信を利用したりしています。<br>
+                    長距離ドライブでは普段持ち歩いているMT3600BEを車内でも使用しています。
+                </p>
+            </section>
+            
+            <section>
+                <h2>何が便利なの？</h2>
+                <h3>車内の機器をまとめてインターネットに接続できる</h3>
+                <p>
+                    車内にWi-Fi環境があれば、iPadやゲーム機など、モバイル回線を持たない機器でもインターネットを利用できます。<br>
+                    長距離の移動中に動画を見たり、音楽を聴いたりするときにも便利です。<br>
+                    小さい子どもがいる家庭では、親のスマートフォンを貸す代わりに、子ども用にフィルタリング設定をしたWi-Fi専用のタブレットで動画を視聴させる、といった使い方もできます。
+                </p>
+                
+                <h3>スマホのテザリングによるバッテリーの消耗を避けられる</h3>
+                <p>
+                    スマホのテザリングでも十分ですが、バッテリーの消耗が気になります。<br>
+                    特に、長距離ドライブのときはできるだけバッテリーの消耗を抑えたいものです。<br>
+                    車から給電するモバイルルーターなどを利用すれば、スマホのバッテリーを消耗せずに車内Wi-Fiを利用できます。<br>
+                    また、エンジンをかけると自動的に起動するようにしておけば、乗るたびにテザリングをON/OFFする手間もありません。
+                </p>
+            </section>
+            
+            <section>
+                <h2>使っているもの</h2>
+                <h3>GL.iNet SFT1200 (Opal)</h3>
+                <p>
+                    車内のWi-Fiルーターとして使用しています。<br>
+                    スペックは以下を参照。
+                </p>
+                <table>
+                    <tr>
+                        <th>Wi-Fi</th>
+                        <td>Wi-Fi 5（デュアルバンド）</td>
+                    </tr>
+                    <tr>
+                        <th>Wi-Fi速度</th>
+                        <td>2.4GHz：最大300Mbps<br>5GHz：最大867Mbps</td>
+                    </tr>
+                    <tr>
+                        <th>有線LAN</th>
+                        <td>1Gbps × 3ポート（WAN × 1、LAN × 2）</td>
+                    </tr>
+                    <tr>
+                        <th>USB</th>
+                        <td>USB 2.0 × 1</td>
+                    </tr>
+                    <tr>
+                        <th>電源</th>
+                        <td>USB Type-C（5V/3A）</td>
+                    </tr>
+                    <tr>
+                        <th>接続台数</th>
+                        <td>最大52台</td>
+                    </tr>
+                    <tr>
+                        <th>VPN</th>
+                        <td>WireGuard：最大65Mbps<br>OpenVPN：最大12Mbps</td>
+                    </tr>
+                    <tr>
+                        <th>サイズ・重量</th>
+                        <td>118 × 85 × 30mm / 145g</td>
+                    </tr>
+                </table>
+                </p>
+                
+                <h3>富士ソフト +F FS050W</h3>
+                <p>
+                    この製品を単体で使う方がシンプルでいいです。<br>
+                    しかし、今回はこのFS050Wをリピーター接続で使う方法を紹介します。
+                </p>
+                
+                <h3>Anker Nano Car Charger (75W, 巻取り式 USB-Cケーブル)</h3>
+                <p>
+                    シガーソケットから電源を取るためのカーチャージャーです。<br>
+                    カーチャージャーは、接続する機器に必要な出力だけでなく、車側のアクセサリーソケットの定格も考えて選ぶ必要があります。<br>
+                    私は130Wクラスの製品も検討しましたが、車側の定格を超える使い方を避けるため、最大75Wの製品を選びました。<br>
+                    スペックは以下を参照。
+                </p>
+                <table>
+                    <tr>
+                        <th>入力</th>
+                        <td>12V / 8A、24V / 4A</td>
+                    </tr>
+                    <tr>
+                        <th>合計最大出力</th>
+                        <td>75W</td>
+                    </tr>
+                    <tr>
+                        <th>巻取り式USB-Cケーブル</th>
+                        <td>最大45W</td>
+                    </tr>
+                    <tr>
+                        <th>USB-Cポート</th>
+                        <td>最大30W</td>
+                    </tr>
+                    <tr>
+                        <th>ケーブル</th>
+                        <td>巻取り式USB-Cケーブル（約70cm）</td>
+                    </tr>
+                    <tr>
+                        <th>サイズ</th>
+                        <td>約100 × 50 × 29mm</td>
+                    </tr>
+                    <tr>
+                        <th>重量</th>
+                        <td>約77g</td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h2>実際の使用例</h2>
+                <p>
+                    普段は、SFT1200とFS050Wを組み合わせて車内Wi-Fiとして使用しています。<br>
+                    構成は次のようになっています。
+                </p>
+                <img id="connection_car" src="images/car-map.jpg" alt="車内Wi-Fiの接続構成図">
+                
+                <h3>SFT1200を車内Wi-Fiとして使用する</h3>
+                <p>
+                    普段はSFT1200を車内に置き、シガーソケットから電源を取って使用しています。<br>
+                    車のエンジンをかけるとSFT1200にも電源が入り、自動的にWi-Fiが使えるようになります。<br>
+                    車内で使用する機器は、あらかじめSFT1200のWi-Fiに接続するよう設定しているため、乗るたびに設定する必要がありません。
+                </p>
+                
+                <h3>FS050Wのモバイル回線を利用する</h3>
+                <p>
+                    FT1200自体にはモバイル回線へ接続する機能がないため、インターネット回線にはFS050Wを利用しています。<br>
+                    SFT1200をFS050WのWi-Fiへリピーター接続することで、SFT1200に接続したiPadなどからインターネットを利用できます。<br>
+                    リピーター接続については<a href="travel.html#repeater">コチラ</a>を参照。
+                </p>
+                
+                <h3>FS050Wだけで使用することもある</h3>
+                <p>
+                    車内Wi-Fiを利用するだけであれば、SFT1200を使わず、FS050WへiPadなどを直接接続することもできます。<br>
+                    FS050Wはバッテリーを取り外した状態でもUSB給電で使用できるため、車内に置いてエンジン始動で起動できます。<br>
+                    ほとんどの場合、こちらの方が実用的だと思います。
+                </p>
+
+                <h3>それでもSFT1200を使っている理由</h3>
+                <p>
+                    FS050Wだけで車内Wi-Fiを利用できるのにSFT1200を使っているのは、手軽に使えるからです。<br>
+                    私はFS050Wを普段から持ち歩いているため、車内には常設していません。<br>
+                    短距離の運転では、乗るたびにFS050Wを取り出して接続するのは少し面倒です。<br>
+                    そこで、余っていたSFT1200を車内に常設し、エンジンをかけると自動的に起動する車内Wi-Fiとして利用しています。
+                </p>
+
+                <h3>長距離ドライブではMT3600BEを使用する</h3>
+                <p>
+                    一方、長距離ドライブでは、普段持ち歩いているMT3600BEを使用しています。<br>
+                    MT3600BEにはシガーソケットから給電し、FS050WとはUSBテザリングで接続します。<br>
+                    FS050WをWi-Fiで使用するとバッテリーを消費するため、長時間使用するときはUSBテザリングを利用しています。
+                </p>
+            </section>
+            
+            <section>
+                <h2>注意点・うまくいかなかったこと</h2>
+                <h3>FS050WはバッテリーレスではUSBテザリングを利用できない</h3>
+                <p>
+                    FS050Wはバッテリーを取り外した状態でもUSB給電で使用できますが、バッテリーレスで使用する場合はUSBテザリングや有線LANを利用できません。<br>
+                    そのため、MT3600BEとUSBテザリングで接続するときは、FS050Wにバッテリーを取り付けて使用する必要があります。
+                </p>
+                
+                <h3>夏場の車内温度に注意</h3>
+                <p>
+                    バッテリーが搭載されていないルーターは、車に常設しやすいですが、夏場は気をつけたい。<br>
+                    GL.iNetの製品の場合、メーカーが示している保管温度は-20℃～70℃です。<br>
+                    また、FS050Wをバッテリーレスで使用する場合でも、本体の保管温度は-20℃～60℃とされています。<br>
+                    夏場の車内は高温になるため、バッテリーを搭載していない機器であっても、
+                    直射日光が当たる場所を避けるなど、設置場所には注意が必要です。
+                </p>
+
+            </section>
+            
+            <section>
+                <h2>関連する使い方</h2>
+                <ul>
+                    <li>
+                        <a href="travel.html">旅行・外出先でも快適にネットを使いたい</a>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer>
+            <small>&copy; 2026 Gadget Guide</small>
+        </footer>
+
+    </div>
+
 </body>
+
 </html>
